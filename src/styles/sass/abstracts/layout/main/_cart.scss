@@ -1,0 +1,119 @@
+.cart {
+  display : grid;
+  gap     : 1rem;
+  margin  : auto;
+  width   : 98%;
+  @include responsive(sm) {
+    gap   : 0.5rem;
+    width : 100%;
+  }
+  &--top {
+    align-items           : center;
+    background-color      : black;
+    border-radius         : 3rem;
+    color                 : white;
+    display               : grid;
+    font-size             : 2rem;
+    grid-template-columns : 12rem calc(100% - 32rem) 10rem 10rem;
+    grid-template-rows    : 4rem;
+    margin                : 0 1rem;
+    overflow              : hidden;
+    text-align            : center;
+    width                 : calc(100% - 7rem);
+    @include responsive(sm) {
+      font-size             : 1.5rem;
+      grid-template-columns : 10rem calc(100% - 26rem) 8rem 8rem;
+      grid-template-rows    : 3rem;
+      margin                : 0;
+      width                 : calc(100% - 5rem);
+    }
+    @include responsive(xs) {
+      grid-template-columns : 7rem calc(100% - 21rem) 7rem 7rem;
+    }
+  }
+  &--middle {
+    max-height : 50vh;
+    overflow-y : auto;
+    padding    : 0 1rem;
+    @include responsive(sm) {
+      padding: 0;
+    }
+    & > div {
+      display : grid;
+      padding : 1rem 0;
+      gap     : 1rem;
+    }
+  }
+  &--bottom {
+    padding: 0.5rem 0;
+  }
+  &--division {
+    position: relative;
+    &::after {
+      content: "";
+      background-color : black;
+      bottom           : 0;
+      height           : calc(100% - 2rem);
+      left             : 0;
+      margin           : auto;
+      position         : absolute;
+      top              : 0;
+      width            : 0.1rem;
+    }
+  }
+  &__table {
+    align-items     : center;
+    cursor          : context-menu;
+    display         : flex;
+    height          : 100%;
+    justify-content : center;
+    width: 100%;
+    padding         : 0 1rem;
+    & > span {
+      max-width: 100%;
+      overflow      : hidden;
+      text-overflow : ellipsis;
+      white-space   : nowrap;
+    }
+    & > .btn:hover {
+      color: red;
+    }
+  }
+  &__figure {
+    align-items           : center;
+    background-color      : white;
+    border-radius         : 3rem;
+    display               : grid;
+    font-size             : 2rem;
+    grid-template-columns : 12rem calc(100% - 37rem) 10rem 10rem 5rem;
+    grid-template-rows    : 8rem;
+    overflow              : hidden;
+    text-align            : center;
+    transition            : 0.3s;
+    &:hover {
+      box-shadow: 0 0 0.8rem black;
+      // background-color: rgba(0, 0, 0, 0.1);
+      @include responsive(sm) {
+        background-color : white;
+        box-shadow       : none;
+      }
+    }
+    @include responsive(sm) {
+      font-size             : 1.5rem;
+      grid-template-columns : 10rem calc(100% - 31rem) 8rem 8rem 5rem;
+      grid-template-rows    : 5rem;
+    }
+    @include responsive(xs) {
+      font-size             : 1rem;
+      grid-template-columns : 7rem calc(100% - 25rem) 7rem 7rem 4rem;
+    }
+  }
+  &__picture {
+    background-color : white;
+    display          : block;
+    height           : calc(100% - 2rem);
+    margin           : auto;
+    padding          : 0;
+    width            : max-content;
+  }
+}
